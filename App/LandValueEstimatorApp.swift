@@ -2,7 +2,10 @@
 //  LandValueEstimatorApp.swift
 //  LandValueEstimator
 //
-//  Created by Aryan on 21/07/26.
+//  Step 10: root view is now RootTabView (Estimate + History tabs)
+//  instead of EstimatorFormView directly, and .modelContainer(for:)
+//  registers SavedEstimate with SwiftData so history persists across
+//  app launches.
 //
 
 import SwiftUI
@@ -11,7 +14,8 @@ import SwiftUI
 struct LandValueEstimatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootTabView()
         }
+        .modelContainer(for: SavedEstimate.self)
     }
 }

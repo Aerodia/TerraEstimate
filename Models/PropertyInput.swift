@@ -42,6 +42,12 @@ enum PropertyType: String, CaseIterable, Identifiable {
 }
 
 struct PropertyInput {
+    // NOTE ON RANGES: the UI (EstimatorFormView) constrains sliders/steppers
+    // to roughly match what the training data actually contained (see
+    // data_generator.py). Predictions for inputs far outside that range
+    // are extrapolation -- the model has never seen anything like them --
+    // so keeping the UI bounds aligned with training data avoids silently
+    // unreliable estimates.
     var propertyType: PropertyType = .residential
     var sizeSqft: Double = 1800
     var locationZone: LocationZone = .zoneC

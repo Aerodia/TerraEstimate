@@ -6,17 +6,38 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		923C2604300F44D9008EDA06 /* LandValueModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 923C2603300F44D9008EDA06 /* LandValueModel.mlmodel */; };
+		926BC931300FD69200EEC8E4 /* PredictionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC92E300FD69200EEC8E4 /* PredictionResult.swift */; };
+		926BC932300FD69200EEC8E4 /* PropertyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC92F300FD69200EEC8E4 /* PropertyInput.swift */; };
+		926BC933300FD69200EEC8E4 /* SavedEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC930300FD69200EEC8E4 /* SavedEstimate.swift */; };
+		926BC934300FD69200EEC8E4 /* FeatureImportance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC92D300FD69200EEC8E4 /* FeatureImportance.swift */; };
+		926BC936300FD6C100EEC8E4 /* EstimatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC935300FD6C100EEC8E4 /* EstimatorViewModel.swift */; };
+		926BC93C300FD6FE00EEC8E4 /* EstimatorFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC937300FD6FE00EEC8E4 /* EstimatorFormView.swift */; };
+		926BC93D300FD6FE00EEC8E4 /* FeatureImportanceChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC938300FD6FE00EEC8E4 /* FeatureImportanceChartView.swift */; };
+		926BC93E300FD6FE00EEC8E4 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC939300FD6FE00EEC8E4 /* HistoryView.swift */; };
+		926BC93F300FD6FE00EEC8E4 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC93A300FD6FE00EEC8E4 /* ResultView.swift */; };
+		926BC940300FD6FE00EEC8E4 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC93B300FD6FE00EEC8E4 /* RootTabView.swift */; };
+		926BC942300FD71B00EEC8E4 /* PredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC941300FD71B00EEC8E4 /* PredictionService.swift */; };
+		926BC944300FD72F00EEC8E4 /* LandValueEstimatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BC943300FD72F00EEC8E4 /* LandValueEstimatorApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		923C25EC300F427D008EDA06 /* LandValueEstimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandValueEstimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		923C2603300F44D9008EDA06 /* LandValueModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LandValueModel.mlmodel; sourceTree = "<group>"; };
+		926BC92D300FD69200EEC8E4 /* FeatureImportance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureImportance.swift; sourceTree = "<group>"; };
+		926BC92E300FD69200EEC8E4 /* PredictionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResult.swift; sourceTree = "<group>"; };
+		926BC92F300FD69200EEC8E4 /* PropertyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyInput.swift; sourceTree = "<group>"; };
+		926BC930300FD69200EEC8E4 /* SavedEstimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEstimate.swift; sourceTree = "<group>"; };
+		926BC935300FD6C100EEC8E4 /* EstimatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatorViewModel.swift; sourceTree = "<group>"; };
+		926BC937300FD6FE00EEC8E4 /* EstimatorFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatorFormView.swift; sourceTree = "<group>"; };
+		926BC938300FD6FE00EEC8E4 /* FeatureImportanceChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureImportanceChartView.swift; sourceTree = "<group>"; };
+		926BC939300FD6FE00EEC8E4 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		926BC93A300FD6FE00EEC8E4 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		926BC93B300FD6FE00EEC8E4 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		926BC941300FD71B00EEC8E4 /* PredictionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionService.swift; sourceTree = "<group>"; };
+		926BC943300FD72F00EEC8E4 /* LandValueEstimatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandValueEstimatorApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		923C25EE300F427D008EDA06 /* LandValueEstimator */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = LandValueEstimator;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		923C25E9300F427D008EDA06 /* Frameworks */ = {
@@ -32,7 +53,11 @@
 		923C25E3300F427D008EDA06 = {
 			isa = PBXGroup;
 			children = (
-				923C25EE300F427D008EDA06 /* LandValueEstimator */,
+				923C25FF300F4409008EDA06 /* Services */,
+				923C25FE300F4403008EDA06 /* Views */,
+				923C25FD300F43F5008EDA06 /* ViewModels */,
+				923C25FC300F43E1008EDA06 /* Models */,
+				923C25FB300F43CD008EDA06 /* App */,
 				923C25ED300F427D008EDA06 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +68,54 @@
 				923C25EC300F427D008EDA06 /* LandValueEstimator.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		923C25FB300F43CD008EDA06 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				926BC943300FD72F00EEC8E4 /* LandValueEstimatorApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		923C25FC300F43E1008EDA06 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				926BC92D300FD69200EEC8E4 /* FeatureImportance.swift */,
+				926BC92E300FD69200EEC8E4 /* PredictionResult.swift */,
+				926BC92F300FD69200EEC8E4 /* PropertyInput.swift */,
+				926BC930300FD69200EEC8E4 /* SavedEstimate.swift */,
+				923C2603300F44D9008EDA06 /* LandValueModel.mlmodel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		923C25FD300F43F5008EDA06 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				926BC935300FD6C100EEC8E4 /* EstimatorViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		923C25FE300F4403008EDA06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				926BC937300FD6FE00EEC8E4 /* EstimatorFormView.swift */,
+				926BC938300FD6FE00EEC8E4 /* FeatureImportanceChartView.swift */,
+				926BC939300FD6FE00EEC8E4 /* HistoryView.swift */,
+				926BC93A300FD6FE00EEC8E4 /* ResultView.swift */,
+				926BC93B300FD6FE00EEC8E4 /* RootTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		923C25FF300F4409008EDA06 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				926BC941300FD71B00EEC8E4 /* PredictionService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +132,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				923C25EE300F427D008EDA06 /* LandValueEstimator */,
 			);
 			name = LandValueEstimator;
 			packageProductDependencies = (
@@ -119,6 +189,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926BC93C300FD6FE00EEC8E4 /* EstimatorFormView.swift in Sources */,
+				926BC93D300FD6FE00EEC8E4 /* FeatureImportanceChartView.swift in Sources */,
+				926BC93E300FD6FE00EEC8E4 /* HistoryView.swift in Sources */,
+				926BC93F300FD6FE00EEC8E4 /* ResultView.swift in Sources */,
+				926BC940300FD6FE00EEC8E4 /* RootTabView.swift in Sources */,
+				926BC944300FD72F00EEC8E4 /* LandValueEstimatorApp.swift in Sources */,
+				926BC931300FD69200EEC8E4 /* PredictionResult.swift in Sources */,
+				926BC932300FD69200EEC8E4 /* PropertyInput.swift in Sources */,
+				926BC933300FD69200EEC8E4 /* SavedEstimate.swift in Sources */,
+				926BC934300FD69200EEC8E4 /* FeatureImportance.swift in Sources */,
+				923C2604300F44D9008EDA06 /* LandValueModel.mlmodel in Sources */,
+				926BC942300FD71B00EEC8E4 /* PredictionService.swift in Sources */,
+				926BC936300FD6C100EEC8E4 /* EstimatorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,11 +336,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -284,11 +369,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

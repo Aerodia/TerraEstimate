@@ -9,6 +9,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct LandValueEstimatorApp: App {

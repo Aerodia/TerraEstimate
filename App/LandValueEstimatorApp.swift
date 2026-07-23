@@ -16,7 +16,7 @@ struct LandValueEstimatorApp: App {
     var body: some Scene {
         WindowGroup {
             RootTabView()
+                .modelContainer(for: SavedEstimate.self)
         }
-        .modelContainer(for: SavedEstimate.self)
     }
 }

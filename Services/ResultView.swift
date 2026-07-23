@@ -14,14 +14,14 @@ struct ResultView: View {
     let input: PropertyInput
     let result: PredictionResult
     var onDismiss: () -> Void
-
+    
     @Environment(\.modelContext) private var modelContext
-
+    
     /// Drives the count-up animation on appear -- starts at 0 and animates
     /// to the real estimate so the number doesn't just pop into place.
     @State private var displayedValue: Double = 0
     @State private var isSaved = false
-
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -48,15 +48,15 @@ struct ResultView: View {
             }
         }
     }
-
+    
     // MARK: - Header
-
+    
     private var estimateHeader: some View {
         VStack(spacing: 6) {
             Text("Estimated Value")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
-
+            
             Text(displayedValue, format: .currency(code: "USD").precision(.fractionLength(0)))
                 .font(.system(size: 44, weight: .bold, design: .rounded))
                 .contentTransition(.numericText(value: displayedValue))
@@ -65,14 +65,14 @@ struct ResultView: View {
         .frame(maxWidth: .infinity)
         .padding(.vertical, 20)
     }
-
+    
     // MARK: - Confidence Range
-
+    
     private var rangeCard: some View {
         VStack(alignment: .leading, spacing: 10) {
             Label("Confidence Range", systemImage: "arrow.left.and.right")
                 .font(.subheadline.weight(.semibold))
-
+            
             HStack {
                 Text(result.formattedLowerBound)
                 Spacer()
@@ -80,7 +80,7 @@ struct ResultView: View {
             }
             .font(.callout)
             .foregroundStyle(.secondary)
-
+            
             Capsule()
                 .fill(Color.accentColor.opacity(0.2))
                 .frame(height: 6)
@@ -89,7 +89,7 @@ struct ResultView: View {
                         .fill(Color.accentColor)
                         .frame(width: 24, height: 6)
                 }
-
+            
             Text("Based on this model's typical prediction error (± \(result.formattedConfidenceMargin)) on held-out test data.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
@@ -97,30 +97,31 @@ struct ResultView: View {
         .padding()
         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
     }
-
+    
     // MARK: - Feature Importance
-
+    
     private var featureImportanceCard: some View {
         VStack(alignment: .leading, spacing: 12) {
             Label("What Drives This Estimate", systemImage: "chart.bar.fill")
                 .font(.subheadline.weight(.semibold))
-
+            
             Text("Based on the model's training data, in general:")
                 .font(.caption)
                 .foregroundStyle(.secondary)
-
+            
             FeatureImportanceChartView(data: FeatureImportanceData.all)
         }
         .padding()
         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
     }
-
+    
     // MARK: - Save to History
-
+    
     private var saveButton: some View {
         Button {
             let record = SavedEstimate(input: input, result: result)
             modelContext.insert(record)
+            try? modelContext.save() // Force SwiftData to persist immediately
             isSaved = true
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
         } label: {
@@ -138,7 +139,6 @@ struct ResultView: View {
         .disabled(isSaved)
     }
 }
-
 #Preview {
     ResultView(
         input: PropertyInput(),

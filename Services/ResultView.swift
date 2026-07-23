@@ -90,7 +90,7 @@ struct ResultView: View {
                         .frame(width: 24, height: 6)
                 }
 
-            Text("Based on this model's typical prediction error (± $45,690) on held-out test data.")
+            Text("Based on this model's typical prediction error (± \(result.formattedConfidenceMargin)) on held-out test data.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }

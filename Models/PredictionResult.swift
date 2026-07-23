@@ -31,4 +31,8 @@ struct PredictionResult {
     var formattedUpperBound: String {
         Self.currencyFormatter.string(from: NSNumber(value: upperBound)) ?? "$--"
     }
+
+    var formattedConfidenceMargin: String {
+        Self.currencyFormatter.string(from: NSNumber(value: confidenceMargin)) ?? "$--"
+    }
 }

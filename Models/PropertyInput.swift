@@ -3,11 +3,16 @@
 //  LandValueEstimator
 //
 //  Represents everything collected from the estimator form. The property
-//  names and the two enums below are deliberately aligned with the 15
+//  names and the two enums below are deliberately aligned with the 12
 //  Core ML input features baked into LandValueModel.mlmodel (see
 //  export_coreml.py -> CORE_ML_INPUT_ORDER on the Python side) so that
-//  PredictionService (Step 7) can map this struct to the model inputs
-//  with no ambiguity.
+//  PredictionService can map this struct to the model inputs with no
+//  ambiguity.
+//
+//  NOTE: distanceToCityKm, nearSchool, and hasWaterAccess were REMOVED
+//  when the app switched to training on real data (Ames Housing) instead
+//  of the synthetic mock dataset -- there's no real-data equivalent for
+//  those fields. See load_real_data.py's module docstring for the reasoning.
 //
 
 import Foundation
@@ -44,7 +49,7 @@ enum PropertyType: String, CaseIterable, Identifiable {
 struct PropertyInput {
     // NOTE ON RANGES: the UI (EstimatorFormView) constrains sliders/steppers
     // to roughly match what the training data actually contained (see
-    // data_generator.py). Predictions for inputs far outside that range
+    // load_real_data.py). Predictions for inputs far outside that range
     // are extrapolation -- the model has never seen anything like them --
     // so keeping the UI bounds aligned with training data avoids silently
     // unreliable estimates.
@@ -57,11 +62,7 @@ struct PropertyInput {
     var bathrooms: Int = 2
     var ageYears: Int = 10
 
-    var distanceToCityKm: Double = 8
-
     var nearMainRoad: Bool = false
-    var nearSchool: Bool = false
-    var hasWaterAccess: Bool = false
 
     /// Effective values enforce the same rule the training data used:
     /// vacant land always has 0 bedrooms/bathrooms/age, regardless of

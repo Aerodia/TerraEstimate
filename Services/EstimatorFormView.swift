@@ -6,6 +6,11 @@
 //  EstimatorViewModel -> PredictionService -> Core ML (Step 7), and the
 //  result is now presented as a dedicated ResultView sheet (Step 8).
 //
+//  NOTE: the "Distance to City" slider and the "Near School" / "Has Water
+//  Access" toggles were removed when the app switched to training on real
+//  data (Ames Housing) -- no real-data equivalent existed for them. See
+//  PropertyInput.swift for the full reasoning.
+//
 
 import SwiftUI
 
@@ -23,7 +28,6 @@ struct EstimatorFormView: View {
                     residentialDetailsSection
                 }
 
-                locationFactorsSection
                 amenitiesSection
                 estimateButtonSection
             }
@@ -138,33 +142,15 @@ struct EstimatorFormView: View {
         }
     }
 
-    // MARK: - Location Factors
-
-    private var locationFactorsSection: some View {
-        Section {
-            VStack(alignment: .leading, spacing: 4) {
-                HStack {
-                    Text("Distance to City Center")
-                    Spacer()
-                    Text(String(format: "%.1f km", input.distanceToCityKm))
-                        .foregroundStyle(.secondary)
-                }
-                Slider(value: $input.distanceToCityKm, in: 0...60, step: 0.5)
-            }
-        } header: {
-            Label("Location Factors", systemImage: "location.fill")
-        }
-    }
-
     // MARK: - Amenities
 
     private var amenitiesSection: some View {
         Section {
             Toggle("Near Main Road", isOn: $input.nearMainRoad)
-            Toggle("Near School", isOn: $input.nearSchool)
-            Toggle("Has Water Access", isOn: $input.hasWaterAccess)
         } header: {
-            Label("Amenities", systemImage: "star.fill")
+            Label("Road Access", systemImage: "road.lanes")
+        } footer: {
+            Text("Whether the property is adjacent to a busy arterial or feeder street.")
         }
     }
 

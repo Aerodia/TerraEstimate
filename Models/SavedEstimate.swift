@@ -11,6 +11,15 @@
 //  persist Swift enums directly in a way that's safe across schema
 //  changes), with computed properties to convert back to the real enum.
 //
+//  SCHEMA CHANGE NOTE: distanceToCityKm, nearSchool, and hasWaterAccess
+//  were removed when the app switched to real Ames Housing data (no
+//  real-data equivalent -- see PropertyInput.swift). SwiftData's
+//  lightweight migration usually handles a dropped property fine, but
+//  since this project has no explicit versioned schema set up, the
+//  safest move is to delete the app from the simulator/device before
+//  installing this version, rather than risk a migration edge case with
+//  old saved history entries.
+//
 
 import Foundation
 import SwiftData
@@ -27,10 +36,7 @@ final class SavedEstimate {
     var bedrooms: Int
     var bathrooms: Int
     var ageYears: Int
-    var distanceToCityKm: Double
     var nearMainRoad: Bool
-    var nearSchool: Bool
-    var hasWaterAccess: Bool
 
     init(input: PropertyInput, result: PredictionResult, date: Date = .now) {
         self.date = date
@@ -43,10 +49,7 @@ final class SavedEstimate {
         self.bedrooms = input.effectiveBedrooms
         self.bathrooms = input.effectiveBathrooms
         self.ageYears = input.effectiveAgeYears
-        self.distanceToCityKm = input.distanceToCityKm
         self.nearMainRoad = input.nearMainRoad
-        self.nearSchool = input.nearSchool
-        self.hasWaterAccess = input.hasWaterAccess
     }
 
     var propertyType: PropertyType {

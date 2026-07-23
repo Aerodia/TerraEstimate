@@ -13,10 +13,20 @@ import SwiftData
 
 @main
 struct LandValueEstimatorApp: App {
+    @AppStorage("hasSeenLanding") private var hasSeenLanding: Bool = false
+
     var body: some Scene {
         WindowGroup {
-            RootTabView()
-                .modelContainer(for: SavedEstimate.self)
+            if hasSeenLanding {
+                RootTabView()
+                    .modelContainer(for: SavedEstimate.self)
+            } else {
+                LandingView {
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
+                        hasSeenLanding = true
+                    }
+                }
+            }
         }
     }
 }

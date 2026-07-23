@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9257843230127A6300ECA3D0 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257843130127A5B00ECA3D0 /* LandingView.swift */; };
 		92DF379F3010A0DB00195AA6 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF379D3010A0DB00195AA6 /* ResultView.swift */; };
 		92DF37A03010A0DB00195AA6 /* FeatureImportanceChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF379B3010A0DB00195AA6 /* FeatureImportanceChartView.swift */; };
 		92DF37A13010A0DB00195AA6 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF379C3010A0DB00195AA6 /* HistoryView.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		923C25EC300F427D008EDA06 /* LandValueEstimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandValueEstimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9257843130127A5B00ECA3D0 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		92DF379A3010A0DB00195AA6 /* EstimatorFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatorFormView.swift; sourceTree = "<group>"; };
 		92DF379B3010A0DB00195AA6 /* FeatureImportanceChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureImportanceChartView.swift; sourceTree = "<group>"; };
 		92DF379C3010A0DB00195AA6 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		923C25FF300F4409008EDA06 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9257843130127A5B00ECA3D0 /* LandingView.swift */,
 				92DF379A3010A0DB00195AA6 /* EstimatorFormView.swift */,
 				92DF379B3010A0DB00195AA6 /* FeatureImportanceChartView.swift */,
 				92DF379C3010A0DB00195AA6 /* HistoryView.swift */,
@@ -191,6 +194,7 @@
 			files = (
 				92DF379F3010A0DB00195AA6 /* ResultView.swift in Sources */,
 				92DF37AE3010A19200195AA6 /* PropertyInput.swift in Sources */,
+				9257843230127A6300ECA3D0 /* LandingView.swift in Sources */,
 				92DF37AF3010A19200195AA6 /* FeatureImportance.swift in Sources */,
 				92DF37B03010A19200195AA6 /* PredictionResult.swift in Sources */,
 				92DF37B13010A19200195AA6 /* SavedEstimate.swift in Sources */,

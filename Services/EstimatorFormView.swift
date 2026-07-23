@@ -125,8 +125,14 @@ struct EstimatorFormView: View {
                     .padding()
                 }
             }
-            .navigationTitle("TerraEstimate")
+            .navigationTitle("") // Hide standard title string
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("TerraEstimate")
+                        .font(.title2.bold())
+                        .foregroundColor(.primary)
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Reset") {
                         withAnimation {

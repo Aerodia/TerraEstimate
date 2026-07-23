@@ -10,6 +10,9 @@ struct HistoryView: View {
     @Query(sort: \SavedEstimate.date, order: .reverse) private var estimates: [SavedEstimate]
     @Environment(\.modelContext) private var modelContext
 
+    // State to trigger the confirmation dialog
+    @State private var showClearAllAlert = false
+
     var body: some View {
         NavigationStack {
             Group {
@@ -25,6 +28,25 @@ struct HistoryView: View {
                 }
             }
             .navigationTitle("History")
+            .toolbar {
+                if !estimates.isEmpty {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(role: .destructive) {
+                            showClearAllAlert = true
+                        } label: {
+                            Label("Clear All", systemImage: "trash")
+                                .foregroundColor(.red)
+                        }
+                    }
+                }
+            }
+            // MARK: - Deletion Confirmation Alert
+            .alert("Clear All History?", isPresented: $showClearAllAlert) {
+                Button("Clear All", role: .destructive, action: deleteAll)
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("Are you sure you want to delete all saved estimates? This action cannot be undone.")
+            }
         }
     }
 
@@ -39,6 +61,16 @@ struct HistoryView: View {
     private func delete(at offsets: IndexSet) {
         for index in offsets {
             modelContext.delete(estimates[index])
+        }
+        try? modelContext.save()
+    }
+
+    private func deleteAll() {
+        withAnimation {
+            for estimate in estimates {
+                modelContext.delete(estimate)
+            }
+            try? modelContext.save()
         }
     }
 }
